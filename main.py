@@ -7,7 +7,7 @@ from omegaconf import OmegaConf
 from train import trainer
 from feature_extractor import * 
 from ddad import *
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
+# os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2"
 
 def build_model(config):
     if config.model.DDADS:
@@ -17,7 +17,7 @@ def build_model(config):
     return unet
 
 def train(config):
-    for c in ['pcb3']: #'tile','toothbrush','wood'
+    for c in ['capsule']: #'tile','toothbrush','wood'
         print(c)
         torch.manual_seed(42)
         np.random.seed(42)
